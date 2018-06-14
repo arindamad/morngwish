@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Morning Wish</title>
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing:border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.whishSection{
+  width:100%;
+}
+.box{
+  max-width:900px;
+  width:100%;
+  margin: 0 auto;
+}
+.boxInner{
+  width:100%;
+  float:left;
+  background:#C9283E;
+}
+.topSection{
+  width: calc(100% - 40px);
+  float:left;
+  padding:20px;
+  margin:20px;
+  border: 1px solid #820333;
+}
+.form-group{
+  width:100%;
+  float:left;
+  margin-bottom:10px;
+}
+h2{
+  color:#ffd9de;
+}
+h1{
+  color:#fff;
+}
+.form-group input{
+  width:100%;
+  float: left;
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border: #F0433A 1px solid;
+  color:#fff;
+  font-size:18px;
+}
+.form-group input:focus{
+  outline:none;
+}
+.submit{
+  width:200px;
+  background: #F0433A;
+  padding:10px;
+  border:1px solid #fff;
+  font-size:18px;
+  color:#fff;
+  cursor:pointer;
+   -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+.submit:hover{
+  color:#F0433A;
+  border:1px solid #F0433A;
+  background:#fff;
+}
+.submit:focus{
+  outline: none;  
+  
+  
+  
+}
+</style>
+
+<body>
+    <div class="whishSection">
+      <div class="box">
+        <div class="boxInner">
+          <div class="topSection">
+            <h2 id="demo">Enter a name</h2>
+            <h1 id="wish"></h1>
+            <div class="form-group">
+            <input type="text" id="myText" value="">          
+            </div>
+            <div class="form-group">
+              <button class="submit" onclick="myFunction()">Submit</button>
+            </div>
+          </div>      
+        </div>        
+      </div>
+    </div>
+    <script type="text/javascript">    	
+		function myFunction() {
+			var x = document.getElementById("myText").value;
+			if(x=="Arindam" || x=="arindam"  || x=="Moumita" || x=="moumita"){
+			  document.getElementById("demo").innerHTML = "HI ! "+x;      
+			  var myDate = new Date();
+			  var hrs = myDate.getHours();
+			  var greet;
+			  if (hrs < 12){
+				greet = 'Good Morning';
+			  }  else if (hrs >= 12 && hrs <= 17){
+				greet = 'Good Afternoon';
+			  } else if (hrs >= 17 && hrs <= 24){
+				greet = 'Good Evening';
+			  } 
+			  document.getElementById("wish").innerHTML = greet+" !";
+			} else{
+			  document.getElementById("demo").innerHTML = "Sorry I don't know you! ";
+			  document.getElementById("wish").innerHTML = "error 404 !";
+			}
+			
+		}
+
+    </script>
+</body>
+</html>
